@@ -2,7 +2,6 @@ module com.booking.booking {
     requires javafx.controls;
     requires javafx.fxml;
 
-
     exports com.booking.booking.controller;
     exports com.booking.booking.app;
 
