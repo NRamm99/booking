@@ -3,7 +3,6 @@ module com.booking.booking {
     requires javafx.fxml;
     requires java.sql;
 
-
     exports com.booking.booking.controller;
     exports com.booking.booking.app;
 
