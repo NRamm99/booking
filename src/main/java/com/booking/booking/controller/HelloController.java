@@ -1,4 +1,4 @@
-package com.booking.booking;
+package com.booking.booking.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

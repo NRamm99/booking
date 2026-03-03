@@ -1,12 +1,12 @@
 package com.booking.booking.model;
 
-public class Service {
+public class SalonService {
 
     String name;
     double price;
     int duration;
 
-    public Service(String name, double price, int duration) {
+    public SalonService(String name, double price, int duration) {
         this.name = name;
         this.price = price;
         this.duration = duration;

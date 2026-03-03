@@ -1,4 +1,4 @@
-package com.booking.booking;
+package com.booking.booking.app;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
