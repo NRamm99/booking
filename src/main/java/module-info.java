@@ -1,6 +1,7 @@
 module com.booking.booking {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     exports com.booking.booking.controller;
