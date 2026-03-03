@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.booking.booking.controller.CustomersController"
+      spacing="16">
+
+    <HBox alignment="CENTER_LEFT" spacing="16">
+        <VBox HBox.hgrow="ALWAYS" spacing="2">
+            <Label styleClass="page-title" text="Kunder"/>
+            <Label styleClass="page-subtitle" text="Administrer kunder og kontaktoplysninger"/>
+        </VBox>
+        <Button text="➕ Ny kunde" styleClass="btn-primary" onAction="#handleNew"/>
+    </HBox>
+
+    <TextField fx:id="searchField" promptText="🔍 Søg på navn, telefon eller e-mail..."
+               styleClass="search-field" onKeyReleased="#handleSearch"/>
+
+    <VBox styleClass="card" VBox.vgrow="ALWAYS" spacing="0" style="-fx-padding: 0;">
+        <TableView fx:id="customerTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colName" text="Navn" prefWidth="200"/>
+                <TableColumn fx:id="colPhone" text="Telefon" prefWidth="130"/>
+                <TableColumn fx:id="colEmail" text="E-mail" prefWidth="220"/>
+                <TableColumn fx:id="colNotes" text="Noter" prefWidth="200"/>
+                <TableColumn fx:id="colActions" text="Handlinger" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+    <!-- Edit panel (shown when a customer is selected) -->
+    <VBox fx:id="editPanel" styleClass="card" spacing="16" managed="false" visible="false">
+        <Label styleClass="card-title" fx:id="editTitle" text="Rediger Kunde"/>
+        <HBox spacing="16">
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label styleClass="field-label" text="Fulde navn *"/>
+                <TextField fx:id="nameField" promptText="Navn" styleClass="text-field"/>
+            </VBox>
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label styleClass="field-label" text="Telefonnummer"/>
+                <TextField fx:id="phoneField" promptText="Telefon" styleClass="text-field"/>
+            </VBox>
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label styleClass="field-label" text="E-mailadresse"/>
+                <TextField fx:id="emailField" promptText="E-mail" styleClass="text-field"/>
+            </VBox>
+        </HBox>
+        <VBox spacing="6">
+            <Label styleClass="field-label" text="Noter (valgfrit – gemmes internt)"/>
+            <TextArea fx:id="notesField" promptText="Fx allergier, præferencer..." prefRowCount="2"/>
+        </VBox>
+        <Label fx:id="editErrorLabel" styleClass="error-label" text=""/>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Button text="Annuller" styleClass="btn-secondary" onAction="#handleCancelEdit"/>
+            <Button text="Gem" styleClass="btn-primary" onAction="#handleSave"/>
+        </HBox>
+    </VBox>
+</VBox>

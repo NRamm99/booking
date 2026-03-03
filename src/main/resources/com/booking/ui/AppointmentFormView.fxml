@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.booking.booking.controller.AppointmentFormController"
+      spacing="20">
+
+    <HBox alignment="CENTER_LEFT" spacing="12">
+        <Button text="← Tilbage" styleClass="btn-secondary,btn-small" onAction="#handleBack"/>
+        <Label fx:id="formTitle" styleClass="page-title" text="Ny Tidsbestilling"/>
+    </HBox>
+
+    <HBox spacing="20" VBox.vgrow="ALWAYS">
+
+        <!-- Left column -->
+        <VBox styleClass="card" spacing="16" HBox.hgrow="ALWAYS">
+            <Label styleClass="card-title" text="Aftaledetaljer"/>
+
+            <!-- Customer -->
+            <VBox spacing="6">
+                <Label styleClass="field-label" text="Kunde *"/>
+                <HBox spacing="8">
+                    <ComboBox fx:id="customerCombo" promptText="Vælg kunde..." HBox.hgrow="ALWAYS"
+                              maxWidth="Infinity" styleClass="combo-box"/>
+                    <Button text="+ Ny" styleClass="btn-secondary,btn-small" onAction="#handleNewCustomer"/>
+                </HBox>
+            </VBox>
+
+            <!-- Employee -->
+            <VBox spacing="6">
+                <Label styleClass="field-label" text="Medarbejder *"/>
+                <ComboBox fx:id="employeeCombo" promptText="Vælg medarbejder..."
+                          maxWidth="Infinity" styleClass="combo-box"/>
+            </VBox>
+
+            <!-- Treatment -->
+            <VBox spacing="6">
+                <Label styleClass="field-label" text="Behandling *"/>
+                <ComboBox fx:id="treatmentCombo" promptText="Vælg behandling..."
+                          maxWidth="Infinity" styleClass="combo-box"/>
+            </VBox>
+
+            <!-- Duration display -->
+            <HBox spacing="8" alignment="CENTER_LEFT"
+                  style="-fx-background-color: #f5ece8; -fx-padding: 10px 14px; -fx-background-radius: 8px;">
+                <Label text="⏱ Varighed:" style="-fx-font-weight: bold; -fx-text-fill: #5a4a42;"/>
+                <Label fx:id="durationLabel" text="–" style="-fx-text-fill: #c0756a; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+
+        <!-- Right column -->
+        <VBox styleClass="card" spacing="16" HBox.hgrow="ALWAYS">
+            <Label styleClass="card-title" text="Tidspunkt"/>
+
+            <!-- Date -->
+            <VBox spacing="6">
+                <Label styleClass="field-label" text="Dato *"/>
+                <DatePicker fx:id="datePicker" maxWidth="Infinity"/>
+            </VBox>
+
+            <!-- Time -->
+            <VBox spacing="6">
+                <Label styleClass="field-label" text="Klokkeslæt *"/>
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                    <Spinner fx:id="hourSpinner" min="7" max="19" initialValue="9"
+                             editable="true" prefWidth="80"/>
+                    <Label text=":" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <Spinner fx:id="minuteSpinner" min="0" max="59" initialValue="0"
+                             editable="true" prefWidth="80"/>
+                </HBox>
+            </VBox>
+
+            <!-- End time display -->
+            <HBox spacing="8" alignment="CENTER_LEFT"
+                  style="-fx-background-color: #f5ece8; -fx-padding: 10px 14px; -fx-background-radius: 8px;">
+                <Label text="🏁 Sluttidspunkt:" style="-fx-font-weight: bold; -fx-text-fill: #5a4a42;"/>
+                <Label fx:id="endTimeLabel" text="–" style="-fx-text-fill: #c0756a; -fx-font-weight: bold;"/>
+            </HBox>
+
+            <!-- Notes -->
+            <VBox spacing="6">
+                <Label styleClass="field-label" text="Interne noter (valgfrit)"/>
+                <TextArea fx:id="notesArea" promptText="Fx særlige ønsker eller oplysninger..."
+                          prefRowCount="3" styleClass="text-area"/>
+            </VBox>
+        </VBox>
+    </HBox>
+
+    <!-- Error label -->
+    <Label fx:id="errorLabel" styleClass="error-label" text="" wrapText="true"/>
+
+    <!-- Action buttons -->
+    <HBox spacing="12" alignment="CENTER_RIGHT">
+        <Button text="Annuller" styleClass="btn-secondary" onAction="#handleBack"/>
+        <Button fx:id="saveBtn" text="Gem aftale" styleClass="btn-primary" onAction="#handleSave"/>
+    </HBox>
+</VBox>

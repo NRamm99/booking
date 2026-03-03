@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.booking.booking.controller.MainController">
+
+    <!-- SIDEBAR -->
+    <left>
+        <VBox styleClass="sidebar" minWidth="200" maxWidth="200">
+
+            <!-- Logo area -->
+            <VBox style="-fx-padding: 24px 20px 16px 20px;">
+                <Label styleClass="sidebar-logo" text="✂ Hårmoni'ka"/>
+                <Label styleClass="sidebar-tagline" text="Booking System"/>
+            </VBox>
+
+            <Pane styleClass="sidebar-divider"/>
+
+            <!-- Navigation buttons -->
+            <Button fx:id="btnDashboard" text="🏠  Oversigt" styleClass="sidebar-btn"
+                    onAction="#showDashboard" maxWidth="Infinity"/>
+            <Button fx:id="btnAppointments" text="📅  Aftaler" styleClass="sidebar-btn"
+                    onAction="#showAppointments" maxWidth="Infinity"/>
+            <Button fx:id="btnNewAppointment" text="➕  Ny Aftale" styleClass="sidebar-btn"
+                    onAction="#showNewAppointment" maxWidth="Infinity"/>
+            <Button fx:id="btnCustomers" text="👥  Kunder" styleClass="sidebar-btn"
+                    onAction="#showCustomers" maxWidth="Infinity"/>
+            <Button fx:id="btnEmployees" text="👤  Medarbejdere" styleClass="sidebar-btn"
+                    onAction="#showEmployees" maxWidth="Infinity"/>
+            <Button fx:id="btnTreatments" text="💇  Behandlinger" styleClass="sidebar-btn"
+                    onAction="#showTreatments" maxWidth="Infinity"/>
+
+            <!-- Spacer -->
+            <Pane VBox.vgrow="ALWAYS"/>
+
+            <Pane styleClass="sidebar-divider"/>
+
+            <!-- User area -->
+            <VBox styleClass="sidebar-user-area" spacing="4">
+                <Label fx:id="currentUserLabel" styleClass="sidebar-user-name" text=""/>
+                <Label fx:id="currentRoleLabel" styleClass="sidebar-user-role" text=""/>
+                <Button text="Log ud" styleClass="btn-secondary,btn-small"
+                        onAction="#handleLogout"
+                        style="-fx-padding: 6px 14px; -fx-margin-top: 8px;" maxWidth="Infinity"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- CONTENT AREA -->
+    <center>
+        <StackPane fx:id="contentPane" styleClass="content-area">
+            <!-- Content views are loaded dynamically -->
+        </StackPane>
+    </center>
+</BorderPane>

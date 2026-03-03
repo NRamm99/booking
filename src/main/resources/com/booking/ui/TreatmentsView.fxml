@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.booking.booking.controller.TreatmentsController"
+      spacing="16">
+
+    <HBox alignment="CENTER_LEFT" spacing="16">
+        <VBox HBox.hgrow="ALWAYS" spacing="2">
+            <Label styleClass="page-title" text="Behandlinger"/>
+            <Label styleClass="page-subtitle" text="Administrer services og priser"/>
+        </VBox>
+        <Button text="➕ Ny behandling" styleClass="btn-primary" onAction="#handleNew"/>
+    </HBox>
+
+    <VBox styleClass="card" VBox.vgrow="ALWAYS" spacing="0" style="-fx-padding: 0;">
+        <TableView fx:id="treatmentTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colName" text="Behandling" prefWidth="250"/>
+                <TableColumn fx:id="colDuration" text="Varighed (min)" prefWidth="140"/>
+                <TableColumn fx:id="colPrice" text="Pris (kr.)" prefWidth="120"/>
+                <TableColumn fx:id="colActions" text="Handlinger" prefWidth="160"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+    <!-- Edit panel -->
+    <VBox fx:id="editPanel" styleClass="card" spacing="16" managed="false" visible="false">
+        <Label fx:id="editTitle" styleClass="card-title" text="Ny Behandling"/>
+        <HBox spacing="16">
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label styleClass="field-label" text="Behandlingsnavn *"/>
+                <TextField fx:id="nameField" styleClass="text-field" promptText="Fx Klipning (dame)"/>
+            </VBox>
+            <VBox spacing="6">
+                <Label styleClass="field-label" text="Varighed (min) *"/>
+                <Spinner fx:id="durationSpinner" min="5" max="300" initialValue="60"
+                         editable="true" prefWidth="120"/>
+            </VBox>
+            <VBox spacing="6">
+                <Label styleClass="field-label" text="Pris (kr.) *"/>
+                <Spinner fx:id="priceSpinner" min="0" max="10000" initialValue="400"
+                         editable="true" prefWidth="120"/>
+            </VBox>
+        </HBox>
+        <Label fx:id="editErrorLabel" styleClass="error-label" text=""/>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Button text="Annuller" styleClass="btn-secondary" onAction="#handleCancelEdit"/>
+            <Button text="Gem" styleClass="btn-primary" onAction="#handleSave"/>
+        </HBox>
+    </VBox>
+</VBox>

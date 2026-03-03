@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.booking.booking.controller.EmployeesController"
+      spacing="16">
+
+    <HBox alignment="CENTER_LEFT" spacing="16">
+        <VBox HBox.hgrow="ALWAYS" spacing="2">
+            <Label styleClass="page-title" text="Medarbejdere"/>
+            <Label styleClass="page-subtitle" text="Administrer medarbejderkonti og adgang"/>
+        </VBox>
+        <Button text="➕ Ny medarbejder" styleClass="btn-primary" onAction="#handleNew"
+                fx:id="newBtn"/>
+    </HBox>
+
+    <VBox styleClass="card" VBox.vgrow="ALWAYS" spacing="0" style="-fx-padding: 0;">
+        <TableView fx:id="employeeTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colName" text="Navn" prefWidth="200"/>
+                <TableColumn fx:id="colUsername" text="Brugernavn" prefWidth="140"/>
+                <TableColumn fx:id="colEmail" text="E-mail" prefWidth="200"/>
+                <TableColumn fx:id="colPhone" text="Telefon" prefWidth="130"/>
+                <TableColumn fx:id="colRole" text="Rolle" prefWidth="100"/>
+                <TableColumn fx:id="colActions" text="Handlinger" prefWidth="160"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+    <!-- Edit panel -->
+    <VBox fx:id="editPanel" styleClass="card" spacing="16" managed="false" visible="false">
+        <Label fx:id="editTitle" styleClass="card-title" text="Ny Medarbejder"/>
+        <HBox spacing="16">
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label styleClass="field-label" text="Fulde navn *"/>
+                <TextField fx:id="nameField" styleClass="text-field" promptText="Navn"/>
+            </VBox>
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label styleClass="field-label" text="Brugernavn *"/>
+                <TextField fx:id="usernameField" styleClass="text-field" promptText="Brugernavn"/>
+            </VBox>
+        </HBox>
+        <HBox spacing="16">
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label styleClass="field-label" text="E-mail"/>
+                <TextField fx:id="emailField" styleClass="text-field" promptText="E-mail"/>
+            </VBox>
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label styleClass="field-label" text="Telefon"/>
+                <TextField fx:id="phoneField" styleClass="text-field" promptText="Telefon"/>
+            </VBox>
+        </HBox>
+        <HBox spacing="16">
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label styleClass="field-label" text="Adgangskode (lad stå for at beholde)"/>
+                <PasswordField fx:id="passwordField" styleClass="password-field" promptText="Ny adgangskode..."/>
+            </VBox>
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label styleClass="field-label" text="Rolle"/>
+                <ComboBox fx:id="roleCombo" maxWidth="Infinity"/>
+            </VBox>
+        </HBox>
+        <Label fx:id="editErrorLabel" styleClass="error-label" text=""/>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Button text="Annuller" styleClass="btn-secondary" onAction="#handleCancelEdit"/>
+            <Button text="Gem" styleClass="btn-primary" onAction="#handleSave"/>
+        </HBox>
+    </VBox>
+</VBox>

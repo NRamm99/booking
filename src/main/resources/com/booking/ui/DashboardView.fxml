@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.booking.booking.controller.DashboardController"
+      spacing="20">
+
+    <!-- Header -->
+    <VBox spacing="2">
+        <Label styleClass="page-title" text="Oversigt"/>
+        <Label fx:id="dateLabel" styleClass="page-subtitle" text=""/>
+    </VBox>
+
+    <!-- Stat cards row -->
+    <HBox spacing="16">
+        <VBox styleClass="stat-card" HBox.hgrow="ALWAYS" spacing="4" alignment="CENTER_LEFT"
+              style="-fx-border-left-width: 4px; -fx-border-color: #c0756a transparent transparent transparent; -fx-border-left-color: #c0756a;">
+            <Label fx:id="todayCountLabel" styleClass="stat-number" text="0"/>
+            <Label styleClass="stat-label" text="Aftaler i dag"/>
+        </VBox>
+        <VBox styleClass="stat-card" HBox.hgrow="ALWAYS" spacing="4" alignment="CENTER_LEFT">
+            <Label fx:id="weekCountLabel" styleClass="stat-number" text="0"/>
+            <Label styleClass="stat-label" text="Denne uge"/>
+        </VBox>
+        <VBox styleClass="stat-card" HBox.hgrow="ALWAYS" spacing="4" alignment="CENTER_LEFT">
+            <Label fx:id="activeCountLabel" styleClass="stat-number" text="0"/>
+            <Label styleClass="stat-label" text="Aktive aftaler (total)"/>
+        </VBox>
+        <VBox styleClass="stat-card" HBox.hgrow="ALWAYS" spacing="4" alignment="CENTER_LEFT">
+            <Label fx:id="customerCountLabel" styleClass="stat-number" text="0"/>
+            <Label styleClass="stat-label" text="Registrerede kunder"/>
+        </VBox>
+    </HBox>
+
+    <!-- Today's appointments -->
+    <VBox styleClass="card" spacing="12" VBox.vgrow="ALWAYS">
+        <HBox alignment="CENTER_LEFT" spacing="12">
+            <Label styleClass="card-title" text="Dagens Aftaler" HBox.hgrow="ALWAYS"/>
+            <Button text="➕ Ny aftale" styleClass="btn-primary,btn-small"
+                    onAction="#handleNewAppointment"/>
+        </HBox>
+
+        <TableView fx:id="todayTable" VBox.vgrow="ALWAYS" style="-fx-pref-height: 300px;">
+            <columns>
+                <TableColumn fx:id="colTime" text="Tidspunkt" prefWidth="130"/>
+                <TableColumn fx:id="colCustomer" text="Kunde" prefWidth="180"/>
+                <TableColumn fx:id="colEmployee" text="Medarbejder" prefWidth="150"/>
+                <TableColumn fx:id="colTreatment" text="Behandling" prefWidth="180"/>
+                <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+                <TableColumn fx:id="colHasPayed" text="Betalt" prefWidth="80"/>
+            </columns>
+        </TableView>
+    </VBox>
+</VBox>

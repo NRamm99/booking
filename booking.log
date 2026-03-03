@@ -1,0 +1,8 @@
+[2026-03-04 00:37:29] [INFO] Schema created/verified.
+[2026-03-04 00:37:29] [INFO] Default seed data inserted.
+[2026-03-04 00:37:29] [INFO] Database ready at: booking.db
+[2026-03-04 00:37:29] [INFO] Database initialized successfully.
+[2026-03-04 00:37:34] [WARN] Login failed: unknown user 'ramm'
+[2026-03-04 00:37:34] [WARN] Failed login attempt for: ramm
+[2026-03-04 00:37:39] [INFO] Login successful: monika
+[2026-03-04 00:37:40] [INFO] Logout: monika

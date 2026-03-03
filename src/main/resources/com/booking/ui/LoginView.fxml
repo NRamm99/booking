@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.booking.booking.controller.LoginController"
+           styleClass="login-container">
+
+    <VBox styleClass="login-card" alignment="CENTER" spacing="0">
+        <Label styleClass="login-logo" text="Hårmoni'ka"/>
+        <Label styleClass="login-subtitle" text="Booking &amp; Planlægningssystem"/>
+
+        <VBox spacing="6" VBox.vgrow="NEVER" style="-fx-padding: 0 0 14px 0;">
+            <Label styleClass="field-label" text="Brugernavn"/>
+            <TextField fx:id="usernameField" promptText="Dit brugernavn" styleClass="text-field"/>
+        </VBox>
+
+        <VBox spacing="6" style="-fx-padding: 0 0 6px 0;">
+            <Label styleClass="field-label" text="Adgangskode"/>
+            <PasswordField fx:id="passwordField" promptText="Din adgangskode" styleClass="password-field"/>
+        </VBox>
+
+        <Label fx:id="errorLabel" styleClass="error-label" text="" wrapText="true" maxWidth="320"/>
+
+        <VBox spacing="0" style="-fx-padding: 20px 0 0 0;">
+            <Button fx:id="loginBtn" text="Log ind" styleClass="btn-primary"
+                    onAction="#handleLogin" maxWidth="Infinity"/>
+        </VBox>
+
+        <Label text="Hårmoni'ka © 2025 | GDPR-kompatibelt system"
+               style="-fx-text-fill: #c0b0a8; -fx-font-size: 10px; -fx-padding: 24px 0 0 0;"
+               alignment="CENTER" maxWidth="Infinity"/>
+    </VBox>
+</StackPane>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.booking.booking.controller.AppointmentsController"
+      spacing="16">
+
+    <!-- Header -->
+    <HBox alignment="CENTER_LEFT" spacing="16">
+        <VBox HBox.hgrow="ALWAYS" spacing="2">
+            <Label styleClass="page-title" text="Tidsbestillinger"/>
+            <Label styleClass="page-subtitle" text="Alle aftaler – søg, rediger og aflys"/>
+        </VBox>
+        <Button text="➕ Ny aftale" styleClass="btn-primary" onAction="#handleNew"/>
+    </HBox>
+
+    <!-- Filter row -->
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <TextField fx:id="searchField" promptText="🔍 Søg på kunde, medarbejder..." styleClass="search-field"/>
+        <ComboBox fx:id="filterEmployee" promptText="Alle medarbejdere" prefWidth="180"/>
+        <ComboBox fx:id="filterStatus" promptText="Alle statusser" prefWidth="150"/>
+        <Button text="Nulstil" styleClass="btn-secondary,btn-small" onAction="#handleReset"/>
+    </HBox>
+
+    <!-- Table -->
+    <VBox styleClass="card" VBox.vgrow="ALWAYS" spacing="0" style="-fx-padding: 0;">
+        <TableView fx:id="appointmentTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colDate" text="Dato &amp; Tid" prefWidth="145"/>
+                <TableColumn fx:id="colCustomerName" text="Kunde" prefWidth="170"/>
+                <TableColumn fx:id="colEmpName" text="Medarbejder" prefWidth="140"/>
+                <TableColumn fx:id="colTreat" text="Behandling" prefWidth="160"/>
+                <TableColumn fx:id="colDuration" text="Varighed" prefWidth="80"/>
+                <TableColumn fx:id="colStatusCol" text="Status" prefWidth="100"/>
+                <TableColumn fx:id="colHasPayed" text="Betalt" prefWidth="80"/>
+                <TableColumn fx:id="colActions" text="Handlinger" prefWidth="180"/>
+            </columns>
+        </TableView>
+    </VBox>
+</VBox>

@@ -1,0 +1,445 @@
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #f9f4f0;
+
+    -brand-primary: #c0756a;
+    -brand-primary-dark: #a05a50;
+    -brand-primary-light: #e8a89e;
+    -brand-secondary: #5a4a42;
+    -brand-accent: #d4a87a;
+    -bg-main: #f9f4f0;
+    -bg-panel: #ffffff;
+    -bg-sidebar: #3d2f2a;
+    -text-dark: #2b1f1a;
+    -text-medium: #5a4a42;
+    -text-light: #9a8a82;
+    -border-color: #e0d5cf;
+    -success: #5aaa72;
+    -warning: #e8a030;
+    -error: #c05050;
+    -cancelled: #a0a0a0;
+}
+
+/* === LOGIN SCREEN === */
+.login-container {
+    -fx-background-color: linear-gradient(to bottom right, #3d2f2a, #6b4a42);
+    -fx-padding: 0;
+}
+
+.login-card {
+    -fx-background-color: white;
+    -fx-background-radius: 16px;
+    -fx-padding: 48px 40px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 30, 0, 0, 8);
+    -fx-max-width: 400px;
+    -fx-max-height: 480px;
+}
+
+.login-logo {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #c0756a;
+    -fx-padding: 0 0 4px 0;
+}
+
+.login-subtitle {
+    -fx-text-fill: #9a8a82;
+    -fx-font-size: 13px;
+    -fx-padding: 0 0 24px 0;
+}
+
+/* === MAIN LAYOUT === */
+.sidebar {
+    -fx-background-color: #3d2f2a;
+    -fx-padding: 0;
+    -fx-min-width: 200px;
+    -fx-max-width: 200px;
+}
+
+.sidebar-logo {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e8a89e;
+    -fx-padding: 24px 20px 8px 20px;
+}
+
+.sidebar-tagline {
+    -fx-text-fill: #9a7a72;
+    -fx-font-size: 11px;
+    -fx-padding: 0 20px 24px 20px;
+}
+
+.sidebar-divider {
+    -fx-background-color: #5a3f38;
+    -fx-min-height: 1px;
+    -fx-max-height: 1px;
+    -fx-padding: 0;
+}
+
+.sidebar-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #c8b4ae;
+    -fx-font-size: 13px;
+    -fx-padding: 12px 20px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0;
+    -fx-min-width: 200px;
+}
+
+.sidebar-btn:hover {
+    -fx-background-color: #4d3530;
+    -fx-text-fill: white;
+}
+
+.sidebar-btn-active {
+    -fx-background-color: #c0756a;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.sidebar-btn-active:hover {
+    -fx-background-color: #a05a50;
+}
+
+.sidebar-user-area {
+    -fx-background-color: #2d1f1a;
+    -fx-padding: 16px 20px;
+}
+
+.sidebar-user-name {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.sidebar-user-role {
+    -fx-text-fill: #9a7a72;
+    -fx-font-size: 11px;
+}
+
+.content-area {
+    -fx-background-color: #f9f4f0;
+    -fx-padding: 28px;
+}
+
+/* === PAGE HEADERS === */
+.page-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2b1f1a;
+}
+
+.page-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #9a8a82;
+    -fx-padding: 2px 0 20px 0;
+}
+
+/* === CARDS === */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-color: #e0d5cf;
+    -fx-border-radius: 10px;
+    -fx-border-width: 1px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 8, 0, 0, 2);
+}
+
+.card-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #5a4a42;
+    -fx-padding: 0 0 12px 0;
+}
+
+/* === STAT CARDS === */
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0, 0, 2);
+}
+
+.stat-number {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #c0756a;
+}
+
+.stat-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #9a8a82;
+    -fx-padding: 4px 0 0 0;
+}
+
+/* === BUTTONS === */
+.btn-primary {
+    -fx-background-color: #c0756a;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 10px 24px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #a05a50;
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #8a4a40;
+}
+
+.btn-secondary {
+    -fx-background-color: white;
+    -fx-text-fill: #5a4a42;
+    -fx-font-size: 13px;
+    -fx-padding: 10px 24px;
+    -fx-background-radius: 8px;
+    -fx-border-color: #c0d0d8;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #f0e8e4;
+}
+
+.btn-danger {
+    -fx-background-color: #c05050;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 24px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #a03030;
+}
+
+.btn-success {
+    -fx-background-color: #5aaa72;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 24px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+}
+
+.btn-success:hover {
+    -fx-background-color: #3a8a52;
+}
+
+.btn-small {
+    -fx-font-size: 11px;
+    -fx-padding: 6px 14px;
+}
+
+/* === FORM FIELDS === */
+.field-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #5a4a42;
+    -fx-padding: 0 0 4px 0;
+}
+
+.text-field, .password-field, .text-area, .combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #d8ccc8;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-width: 1.5px;
+    -fx-padding: 9px 12px;
+    -fx-font-size: 13px;
+    -fx-text-fill: #2b1f1a;
+}
+
+.text-field:focused, .password-field:focused, .text-area:focused {
+    -fx-border-color: #c0756a;
+    -fx-effect: dropshadow(gaussian, rgba(192,117,106,0.25), 6, 0, 0, 0);
+}
+
+.combo-box:focused {
+    -fx-border-color: #c0756a;
+}
+
+.combo-box .list-cell {
+    -fx-padding: 6px 10px;
+}
+
+.text-area {
+    -fx-padding: 9px 12px;
+}
+
+.date-picker .text-field {
+    -fx-padding: 9px 12px;
+}
+
+/* === TABLE === */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #e0d5cf;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #f5ece8;
+    -fx-background-radius: 10px 10px 0 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #e0d5cf transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #5a4a42;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 12px 8px;
+}
+
+.table-row-cell {
+    -fx-border-color: transparent transparent #f0e8e4 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: white;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #fceae7;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #fdf5f3;
+}
+
+.table-row-cell .table-cell {
+    -fx-text-fill: #2b1f1a;
+    -fx-padding: 10px 8px;
+    -fx-font-size: 13px;
+}
+
+/* === STATUS BADGES === */
+.badge {
+    -fx-padding: 3px 10px;
+    -fx-background-radius: 12px;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.badge-active {
+    -fx-background-color: #dcf5e4;
+    -fx-text-fill: #2a7a44;
+}
+
+.badge-completed {
+    -fx-background-color: #d8e8f8;
+    -fx-text-fill: #2a4a7a;
+}
+
+.badge-cancelled {
+    -fx-background-color: #ebebeb;
+    -fx-text-fill: #6a6a6a;
+}
+
+/* === ERROR/SUCCESS MESSAGES === */
+.error-label {
+    -fx-text-fill: #c05050;
+    -fx-font-size: 12px;
+    -fx-padding: 6px 0 0 0;
+}
+
+.success-label {
+    -fx-text-fill: #3a8a52;
+    -fx-font-size: 12px;
+    -fx-padding: 6px 0 0 0;
+}
+
+.alert-box {
+    -fx-background-color: #fdf0ee;
+    -fx-border-color: #e8a89e;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-width: 1.5px;
+    -fx-padding: 12px 16px;
+}
+
+/* === SEARCH BAR === */
+.search-field {
+    -fx-background-color: white;
+    -fx-border-color: #d8ccc8;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-width: 1.5px;
+    -fx-padding: 8px 16px;
+    -fx-font-size: 13px;
+    -fx-min-width: 250px;
+}
+
+.search-field:focused {
+    -fx-border-color: #c0756a;
+}
+
+/* === SEPARATOR === */
+.separator {
+    -fx-background-color: #e0d5cf;
+}
+
+/* === SPINNER / DATE PICKER === */
+.spinner {
+    -fx-background-color: white;
+    -fx-border-color: #d8ccc8;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-width: 1.5px;
+}
+
+.spinner:focused {
+    -fx-border-color: #c0756a;
+}
+
+/* === SCROLL BARS === */
+.scroll-bar:vertical .thumb, .scroll-bar:horizontal .thumb {
+    -fx-background-color: #d8ccc8;
+    -fx-background-radius: 4px;
+}
+
+.scroll-bar:vertical .thumb:hover, .scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #c0756a;
+}
+
+.scroll-bar {
+    -fx-background-color: #f9f4f0;
+}
+
+/* === DIALOG / POPUP === */
+.dialog-pane {
+    -fx-background-color: white;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #f5ece8;
+    -fx-background-radius: 12px 12px 0 0;
+}
+
+/* === TOOLTIP === */
+.tooltip {
+    -fx-background-color: #3d2f2a;
+    -fx-text-fill: white;
+    -fx-background-radius: 6px;
+    -fx-font-size: 12px;
+}
