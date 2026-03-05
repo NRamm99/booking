@@ -69,10 +69,8 @@ public class AppointmentRepository {
         return Optional.empty();
     }
 
-    /**
-     * Check for scheduling conflicts: same employee, overlapping time, not cancelled.
-     * excludeId = -1 means no exclusion (new appointment).
-     */
+    // Check for scheduling conflicts: same employee, overlapping time, not cancelled.
+    // excludeId = -1 means no exclusion (new appointment).
     public boolean hasConflict(int employeeId, LocalDateTime start, LocalDateTime end, int excludeId) {
         String sql = """
             SELECT COUNT(*) FROM appointments
@@ -153,7 +151,7 @@ public class AppointmentRepository {
         }
     }
 
-    /** Cancel: sets status to CANCELLED (never truly deletes, per tax requirement) */
+    //Cancel: sets status to CANCELLED (never truly deletes, per tax requirement)
     public boolean cancel(int id) {
         try (PreparedStatement ps = getConn().prepareStatement(
                 "UPDATE appointments SET status='CANCELLED' WHERE id=?")) {
@@ -165,7 +163,7 @@ public class AppointmentRepository {
         }
     }
 
-    /** Mark as completed */
+    // Mark as completed
     public boolean complete(int id) {
         try (PreparedStatement ps = getConn().prepareStatement(
                 "UPDATE appointments SET status='COMPLETED' WHERE id=?")) {

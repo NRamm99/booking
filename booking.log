@@ -6,3 +6,7 @@
 [2026-03-04 00:37:34] [WARN] Failed login attempt for: ramm
 [2026-03-04 00:37:39] [INFO] Login successful: monika
 [2026-03-04 00:37:40] [INFO] Logout: monika
+[2026-03-05 14:57:50] [INFO] Schema created/verified.
+[2026-03-05 14:57:50] [INFO] Database ready at: booking.db
+[2026-03-05 14:57:50] [INFO] Database initialized successfully.
+[2026-03-05 14:58:10] [INFO] Login successful: monika

@@ -8,10 +8,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * Business logic for appointments.
- * Single Responsibility: appointment rules and orchestration.
- */
+// Business logic for appointments.
+// Single Responsibility: appointment rules and orchestration.
+
 public class AppointmentService {
     private final AppointmentRepository appointmentRepo;
 
@@ -19,10 +18,8 @@ public class AppointmentService {
         this.appointmentRepo = appointmentRepo;
     }
 
-    /**
-     * Creates a new appointment after validation and conflict check.
-     * @return error message, or null on success
-     */
+    // Creates a new appointment after validation and conflict check.
+    // return error message, or null on success
     public String createAppointment(Customer customer, Employee employee, Treatment treatment,
                                     LocalDateTime startTime, String notes) {
         String validationError = validateAppointmentInput(customer, employee, treatment, startTime);
@@ -54,10 +51,8 @@ public class AppointmentService {
         return null;
     }
 
-    /**
-     * Updates an existing appointment.
-     * @return error message, or null on success
-     */
+    // Updates an existing appointment.
+    // return error message, or null on success
     public String updateAppointment(Appointment appointment, Customer customer, Employee employee,
                                     Treatment treatment, LocalDateTime startTime, String notes) {
         String validationError = validateAppointmentInput(customer, employee, treatment, startTime);
@@ -84,9 +79,7 @@ public class AppointmentService {
         return null;
     }
 
-    /**
-     * Cancels an appointment (keeps record per tax requirement).
-     */
+    // Cancels an appointment (keeps record per tax requirement).
     public String cancelAppointment(int id) {
         if (!appointmentRepo.cancel(id)) {
             return "Kunne ikke aflyse aftalen. Prøv igen.";

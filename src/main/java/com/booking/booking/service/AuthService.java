@@ -18,7 +18,7 @@ public class AuthService {
         this.employeeRepo = employeeRepo;
     }
 
-    //Attempts login. Returns the employee if successful, empty otherwise.
+    // Attempts login. Returns the employee if successful, empty otherwise.
     public Optional<Employee> login(String username, String password) {
         if (InputValidator.isNullOrBlank(username) || InputValidator.isNullOrBlank(password)) {
             AppLogger.warn("Login attempt with blank credentials.");
