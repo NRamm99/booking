@@ -98,7 +98,6 @@ public class MainController {
         }
     }
 
-    /** Marker interface so sub-controllers can receive the MainController reference */
     public interface HasMainController {
         void setMainController(MainController mc);
     }
